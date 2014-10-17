@@ -1,2 +1,2 @@
-read.sas7bdat.parso <- function(s7bfile)
-  read.csv(s7b2csv(s7bfile, tempfile()))
+read.sas7bdat.parso <- function(file, ...)
+  read.csv(s7b2csv(file, tempfile()), ...)
