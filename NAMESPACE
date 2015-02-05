@@ -1,3 +1,4 @@
 import("rJava")
 export("s7b2csv")
 export("read.sas7bdat.parso")
+export("fread.sas7bdat.parso")
