@@ -5,14 +5,14 @@
   Read sas7bdat files with the Java Parso library by GGASoftware.
 }
 \usage{
-  read.sas7bdat.parso(file, ...)
+  read.sas7bdat.parso(file, ..., READ_FUNC = read.csv)
 }
 \arguments{
   \item{file}{string; sas7bdat filename}
-  \item{...}{other arguments passed to \code{read.csv}}
+  \item{...}{other arguments passed to \code{READ_FUNC} which defaults to \code{READ_FUNC = read.csv}}
 }
 \details{
-  This function uses the \pkg{rJava} package to interface with the GGASoftware Parso library. The Parso library builds on the sas7bdat file format documentation and code provided by the \pkg{sas7bdat} package. The Parso library is licensed according to the GPLv3. A copy of the GPLv3 is provided in the \code{inst/doc} directory. The Parso library depends on the SLF4J library by the software company QOS.ch. The SLF4J library is subject to the terms of the MIT license. A copy of the MIT license is provided in the \code{inst/doc} directory. The function implementation in rather inefficient, since each row of the sas7bdat database is read separately and written to a temporary CSV file. Once all rows are read, the temporary CSV file is read using the \code{read.csv} function. The code could be made more efficient by reading all of the rows at once. This is possible with the Parso library. However, there must be sufficient memory to store the full dataset. 
+  This function uses the \pkg{rJava} package to interface with the GGASoftware Parso library. The Parso library builds on the sas7bdat file format documentation and code provided by the \pkg{sas7bdat} package. The Parso library is licensed according to the GPLv3. A copy of the GPLv3 is provided in the \code{inst/doc} directory. The Parso library depends on the SLF4J library by the software company QOS.ch. The SLF4J library is subject to the terms of the MIT license. A copy of the MIT license is provided in the \code{inst/doc} directory. The function implementation in rather inefficient, since each row of the sas7bdat database is read separately and written to a temporary CSV file. Once all rows are read, the temporary CSV file is read using the \code{READ_FUNC} function which defaults to \code{READ_FUNC = read.csv}. The code could be made more efficient by reading all of the rows at once. This is possible with the Parso library. However, there must be sufficient memory to store the full dataset. 
 }
 \value{
   A data frame representation of the data stored in the sas7bdat file.
