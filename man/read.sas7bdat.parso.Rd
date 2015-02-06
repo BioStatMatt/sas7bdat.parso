@@ -6,12 +6,13 @@
   Read sas7bdat files with the Java Parso library by GGASoftware.
 }
 \usage{
-  read.sas7bdat.parso(file, ..., READ_FUNC = read.csv)
+  read.sas7bdat.parso(file, READ_FUNC = read.csv, ...)
   
   fread.sas7bdat.parso(file, ...)
 }
 \arguments{
   \item{file}{string; sas7bdat filename}
+  \item{READ_FUNC}{function; function used to read temporary CSV file}
   \item{...}{other arguments passed to \code{READ_FUNC} which defaults to \code{READ_FUNC = read.csv} for \code{read.sas7bdata.parso} and \code{READ_FUNC = data.table::fread} for \code{fread.sas7bdata.parso}
 }}
 \details{
